@@ -1,80 +1,163 @@
-# Social Networking Site - MERN Stack
+# Campus Social Network Web Application
 
-Welcome to the **Social Networking Site** built using the **MERN Stack** (MongoDB, Express, React, Node.js). This project offers users the ability to connect with each other, share posts, like content, and more, similar to popular social networking platforms.
+A modern, feature-rich social networking platform built with Next.js and Node.js, designed specifically for campus communities.
 
-![Website Screenshot](./frontend/public/images/screenshot.png)
+[![Next.js](https://img.shields.io/badge/Next.js-13.0+-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-## 🚀 Live Demo
+##  Features
 
-Check out the live demo of the application [here](https://fb-mern.vercel.app/).
+- **Authentication & Authorization**
+  - Secure user registration and login
+  - JWT-based authentication
+  - Role-based access control
 
-## 📄 Description
+- **Profile Management**
+  - Customizable user profiles
+  - Profile picture upload with Cloudinary integration
+  - Cover photo customization
+  - Bio and personal information management
 
-This social networking site allows users to:
-- Create an account and log in.
-- Post updates, photos, and share content with their connections.
-- Like and comment on posts.
-- Edit their profiles and update personal information.
-- View and manage friend requests.
-- See real-time updates from other users on their feed.
+- **Social Interactions**
+  - Friend requests system
+  - Real-time notifications
+  - Post creation and sharing
+  - Comments and reactions
+  - Story sharing feature
 
-## 🛠️ Tech Stack
+- **Content Management**
+  - Post creation with rich text and media
+  - Story sharing with 24-hour visibility
+  - Bookmark favorite posts
+  - Hashtag support
+  - Media upload capabilities
 
-- **Frontend**: React.js with modern hooks and context for state management.
-- **Backend**: Node.js and Express.js.
-- **Database**: MongoDB for storing user data, posts, and comments.
-- **Authentication**: JWT (JSON Web Token) for secure user authentication.
-- **Hosting**: Vercel for deployment of the frontend and backend.
-  
-## 🔧 Features
+- **Explore & Discover**
+  - Trending posts section
+  - User discovery
+  - Hashtag exploration
+  - Advanced search functionality
 
-- User authentication (login, registration, password hashing).
-- Post creation, editing, and deletion.
-- Like and comment functionality.
-- Real-time feed updates.
-- Friend request system.
-- Profile management (edit user information, update profile picture).
-  
-## 🖥️ Setup Instructions
+##  Tech Stack
 
-To run the project locally, follow these steps:
+### Frontend
+- Next.js 13+
+- Redux for state management
+- Tailwind CSS for styling
+- Axios for API requests
 
-1. **Clone the repository**:
-    ```bash
-    
-    ```
+### Backend
+- Node.js & Express.js
+- MongoDB with Mongoose
+- JWT for authentication
+- Cloudinary for media storage
 
-2. **Install dependencies**:
-   - Navigate to both the frontend and backend directories and run:
-    ```bash
-    npm install
-    ```
+##  Installation & Setup
 
-3. **Set up environment variables**:
-   - Create a `.env` file in the root directory of the backend and add the following:
-    ```env
-    MONGO_URI =
-    PORT =
-    CORS_ORIGIN=
-    JWT_SECRET=
-    ```
+### Prerequisites
+- Node.js 18.0 or higher
+- MongoDB
+- Cloudinary account
+- Git
 
-4. **Start the development server**:
-   - Run the backend server:
-    ```bash
-    npm run dev
-    ```
-   - Run the frontend React application:
-    ```bash
-    npm run dev
-    ```
+### Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
 
-5. **Access the app**: 
-   - Open your browser and go to `http://localhost:3000` for the frontend and `http://localhost:<Backend Port>` for the backend.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## 👨‍💻 Developer
+3. Create a .env file based on envsample.txt with your configurations:
+   ```env
+   PORT=8000
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+   CLOUDINARY_API_KEY=your_cloudinary_key
+   CLOUDINARY_API_SECRET=your_cloudinary_secret
+   ```
 
-**chathuranga**  
-[LinkedIn](https://www.linkedin.com/posts/chathuranga-nry_finally-completed-that-project-hey-everyone-activity-7242780752663265281-CWtB?utm_source=share&utm_medium=member_desktop)
+4. Start the server:
+   ```bash
+   npm run dev
+   ```
 
-Feel free to check out the live demo and connect with me on LinkedIn!
+### Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a .env file based on envsample.txt:
+   ```env
+   NEXT_PUBLIC_BACKEND_API=http://localhost:8000
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+##  API Documentation
+
+The API is organized around REST. All requests should be made to endpoints beginning with `/api/`.
+
+### Main Endpoints:
+
+- **Authentication**
+  - POST `/api/auth/register`
+  - POST `/api/auth/login`
+  - POST `/api/auth/logout`
+
+- **Users**
+  - GET `/api/user/profile`
+  - PUT `/api/user/update`
+  - PUT `/api/user/update/avatar`
+
+- **Posts**
+  - GET `/api/posts`
+  - POST `/api/posts/create`
+  - PUT `/api/posts/:id`
+  - DELETE `/api/posts/:id`
+
+- **Stories**
+  - GET `/api/stories`
+  - POST `/api/stories/create`
+  - DELETE `/api/stories/:id`
+
+##  Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m "Add some AmazingFeature"`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+##  License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+##  Authors
+
+- Deneth0077
+
+##  Acknowledgments
+
+- Thanks to all contributors who have helped this project grow
+- Special thanks to the open-source community
+
+---
+
+Made with  for campus communities
